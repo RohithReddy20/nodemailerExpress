@@ -18,7 +18,7 @@ require("dotenv").config();
 //     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
 // });
 var corsOptions = {
-  origin: "https://z9btxo-3000.preview.csb.app,https://portfolio-ts-eight.vercel.app/",
+  origin: "https://z9btxo-3000.preview.csb.app",
 };
 app.use(cors(corsOptions));
 
