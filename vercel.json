@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "https://z9btxo-3000.preview.csb.app/(.*)",
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
