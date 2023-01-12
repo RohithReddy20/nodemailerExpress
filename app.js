@@ -8,7 +8,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 const app = express();
 
-// const cors = require("cors");
+const cors = require("cors");
 require("dotenv").config();
 
 app.use((req, res, next) => {
@@ -17,10 +17,10 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Credentials', true);
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
 });
-// var corsOptions = {
-//   origin: "https://z9btxo-3000.preview.csb.app",
-// };
-// app.use(cors(corsOptions));
+var corsOptions = {
+  origin: "https://z9btxo-3000.preview.csb.app",
+};
+app.use(cors(corsOptions));
 
 app.use(logger("dev"));
 app.use(express.json());
