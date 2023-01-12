@@ -18,7 +18,7 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
 });
 var corsOptions = {
-  origin: "https://z9btxo-3000.preview.csb.app",
+  origin: "https://z9btxo-3000.preview.csb.app,https://portfolio-ts-eight.vercel.app/",
 };
 app.use(cors(corsOptions));
 
