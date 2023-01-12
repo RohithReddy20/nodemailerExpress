@@ -13,7 +13,7 @@ require("dotenv").config();
 var corsOptions = {
   origin: "https://z9btxo-3000.preview.csb.app",
 };
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(logger("dev"));
 app.use(express.json());
