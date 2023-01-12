@@ -44,6 +44,7 @@ transporter.verify((err, success) => {
 });
 
 app.post("/send", function (req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
   if (
     req.body.mailerState.name === "" ||
     req.body.mailerState.email === "" ||
