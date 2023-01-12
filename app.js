@@ -11,11 +11,11 @@ const app = express();
 const cors = require("cors");
 require("dotenv").config();
 
-app.use((req,res,next) => {
-    res.header('Access-Control-Allow-Origin', '*')
-    res.header('Access-Control-Allow-Methods', '*')
-    res.header('Access-Control-Allow-Headers', '*')
-})
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.header("Access-Control-Allow-Methods", "*");
+//   res.header("Access-Control-Allow-Headers", "*");
+// });
 var corsOptions = {
   origin: "https://z9btxo-3000.preview.csb.app",
 };
