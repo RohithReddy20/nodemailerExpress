@@ -11,7 +11,7 @@ const app = express();
 const cors = require("cors");
 require("dotenv").config();
 var corsOptions = {
-  origin: "https://z9btxo-3000.preview.csb.app/",
+  origin: "https://z9btxo-3000.preview.csb.app",
 };
 app.use(cors());
 
