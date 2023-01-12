@@ -10,6 +10,12 @@ const app = express();
 
 const cors = require("cors");
 require("dotenv").config();
+
+app.use((req,res,next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    res.setHeader('Access-Control-Allow-Methods', '*')
+    res.setHeader('Access-Control-Allow-Headers', '*')
+})
 var corsOptions = {
   origin: "https://z9btxo-3000.preview.csb.app",
 };
@@ -44,7 +50,6 @@ transporter.verify((err, success) => {
 });
 
 app.post("/send", function (req, res) {
-  res.header("Access-Control-Allow-Origin", "*");
   if (
     req.body.mailerState.name === "" ||
     req.body.mailerState.email === "" ||
