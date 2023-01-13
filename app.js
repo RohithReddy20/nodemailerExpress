@@ -18,7 +18,7 @@ require("dotenv").config();
 //     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
 // });
 var corsOptions = {
-  origin: "https://z9btxo-3000.preview.csb.app",
+  origin: "https://www.rohithreddy.works",
 };
 app.use(cors(corsOptions));
 
