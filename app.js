@@ -18,7 +18,7 @@ require("dotenv").config();
 //     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
 // });
 var corsOptions = {
-  origin: "https://www.rohithreddy.works",
+  origin: "http://localhost:3000",
 };
 app.use(cors(corsOptions));
 
@@ -62,8 +62,17 @@ app.post("/send", function (req, res) {
   let mailOptions = {
     from: process.env.REACT_APP_EMAIL,
     to: `${req.body.mailerState.email}`,
+    subject: `NOTIFICATION: Thank you for contacting me!`,
+    text: `Hello ${req.body.mailerState.name}! Thank you for contacting me. I will get back to you as soon as possible.`,
+  };
+
+  let mailOptions1 = {
+    from: process.env.REACT_APP_EMAIL,
+    to: `chimpirirohith@gmail.com`,
     subject: `${req.body.mailerState.name} sent you a message from your portfolio site!`,
-    text: `${req.body.mailerState.message}`,
+    text: `Message: ${req.body.mailerState.message}.
+Email: ${req.body.mailerState.email}
+    `,
   };
 
   transporter.sendMail(mailOptions, function (err, data) {
@@ -71,7 +80,15 @@ app.post("/send", function (req, res) {
       console.log("Error " + err);
     } else {
       console.log("Email sent successfully");
-      res.json({ status: "Email sent" });
+      // res.json({ status: "Email sent" });
+    }
+  });
+  transporter.sendMail(mailOptions1, function (err, data) {
+    if (err) {
+      console.log("Error " + err);
+    } else {
+      console.log("Email sent successfully");
+      res.json({ status: "Emails sent" });
     }
   });
 });
