@@ -18,7 +18,7 @@ require("dotenv").config();
 //     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, OPTIONS, DELETE');
 // });
 var corsOptions = {
-  origin: "http://localhost:3000",
+  origin: ["https://www.rohithreddy.works/", "https://www.rohithreddy.works"],
 };
 app.use(cors(corsOptions));
 
